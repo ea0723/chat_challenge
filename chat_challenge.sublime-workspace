@@ -1,0 +1,267 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"2px",
+				"2px"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<!Doctype HTML>\n<html>\n<head>\n    <title>Elena Newton - HackReactor Chat Challenge</title> \n    <link rel=\"stylesheet\" type=\"text/css\" href=\"chat_challenge_CSS.css\"> \n</head>\n<body>\n  <h1>Welcome to the Chat Challenger. In the box below, type the text you want to display, and press \"enter\".</h1>\n  <textarea class=\"message-input\"></textarea>\n\n    <script src=\"/jquery.js\"></script>\n    <script src=\"/helpers.js\"></script>\n    <script>\n      $(function () {\n\n        $(\".message-input\").keyup(function (e) {\n          if (e.keyCode !== 13) { return; }\n          // on 'enter', send a message to the server\n          e.preventDefault();\n          e.stopPropagation();\n          helpers.sendMessage($.trim($(this).val()));\n          $(this).val(\"\");\n        });\n\n        // Poll the server for new messages.\n        setInterval(function () {\n          helpers.fetchNewMessages(function (messages) {\n            $.each(messages, function (i, message) {\n              helpers.renderMessage(message);\n            });\n          });\n        }, 2000);\n\n      });\n    </script>\n  \n\n",
+			"file": "HTML_Page.html",
+			"file_size": 1129,
+			"file_write_time": 1362223063000000,
+			"settings":
+			{
+				"buffer_size": 1073,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chat_challenge_CSS.css",
+			"settings":
+			{
+				"buffer_size": 452,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chat_helpers_orig.js",
+			"settings":
+			{
+				"buffer_size": 1539,
+				"line_ending": "Unix",
+				"name": "$(function(){"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ea0723/Desktop/chat_challenge.js",
+		"/Users/ea0723/Library/Application Support/Sublime Text 2/Packages/User/Default ().sublime-keymap",
+		"/Users/ea0723/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/ea0723/Library/Application Support/Sublime Text 2/Packages/User/Plain text.sublime-settings"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "HTML_Page.html",
+					"settings":
+					{
+						"buffer_size": 1073,
+						"regions":
+						{
+							"mark":
+							{
+								"flags": 144,
+								"icon": "dot",
+								"regions":
+								[
+									[
+										96,
+										166
+									]
+								],
+								"scope": "mark"
+							}
+						},
+						"selection":
+						[
+							[
+								166,
+								166
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "chat_challenge_CSS.css",
+					"settings":
+					{
+						"buffer_size": 452,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								314,
+								314
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "chat_helpers_orig.js",
+					"settings":
+					{
+						"buffer_size": 1539,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1539,
+								1539
+							]
+						],
+						"settings":
+						{
+							"auto_name": "$(function(){",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

@@ -1,0 +1,30 @@
+html, body {
+  background: whitesmoke;
+}
+
+body {
+  padding: 20px;
+}
+
+.messages {
+  list-style-type: none;
+  background: palegreen;
+  padding: 10px;
+  margin: 5px;
+  font-color: midnightblue;
+  border: solid seagreen 2px;
+}
+
+.messages li:nth-child(odd) {
+  background: darkslateblue;
+  font-color: silver;
+  border: solid silver 2px;
+}
+
+.message-input {
+  height: 1.5em;
+  resize: none;
+  width: 50%;
+  border: solid slateblue 2px;
+  box-shadow: none;
+}

@@ -1,16 +1,12 @@
-$(document).ready(function()) {
-  ("#send_button").event(function()) {
-    
-  }
-}
+$(document).ready(function(){});
+
 
 $(function(){
   var global = (function(){return this;}());
 
-  var host = "codeclasschat.herokuapp.com";
-  //var host = "localhost:1982"; // dev
+  var host = "localhost:8080";
+  //for testing from my local machine
 
-  // The time (in milliseconds) of the last message we received.
   var since = 0;
 
   global.helpers = {

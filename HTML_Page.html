@@ -1,38 +1,69 @@
 <!Doctype HTML>
 <html>
 <head>
-    <title>Elena Newton - HackReactor Chat Challenge</title> 
+    <title>Elena Newton - Hack Reactor Chat Challenge</title> 
     <link rel="stylesheet" type="text/css" href="chat_challenge_CSS.css"> 
 </head>
 <body>
-  <h1>Welcome to the Chat Challenger. In the box below, type the text you want to display, and press "enter".</h1>
-  <textarea class="message-input"></textarea>
-  <div>Send</div>
-
-    <script src="/jquery.js"></script>
-    <script type="text/javascript" src="chat_helpers_new.js"></script>
-    <script>
-      $(function () {
-
-        $(".message-input").keyup(function (e) {
-          if (e.keyCode !== 13) { return; }
-          // on 'enter', send a message to the server
-          e.preventDefault();
-          e.stopPropagation();
-          helpers.sendMessage($.trim($(this).val()));
-          $(this).val("");
-        });
-
-        // Poll the server for new messages.
-        setInterval(function () {
-          helpers.fetchNewMessages(function (messages) {
-            $.each(messages, function (i, message) {
-              helpers.renderMessage(message);
-            });
-          });
-        }, 2000);
-
-      });
-    </script>
+  <h1>Welcome to Elena's Chat Challenge.</h1> 
+  <h3>Type your message in the box, and click "submit".</h3>
   
+  <!--I'd like to try to use the following method to test an alternate way of capturing input and displaying text ...-->
+  <form action="/" class="message-input">
+   <input type="text" name="s" placeholder="Type your chat message here..." />
+   <input type="submit" value="Send" />
+  </form>
+  <!--/* the result of the search will be rendered inside this div -->
+  <div id="result"></div>
+
+<script>
+  /* attach a submit handler to the form */
+  $("#MessageForm").submit(function(event) {
+ 
+  /* stop form from submitting normally */
+  event.preventDefault();
+ 
+  /* Send the data to the server using post */
+  var posting = $.post( host, { s: term } );
+ 
+  /* Put the results in a div */
+  posting.done(function( data ) {
+    var content = $( data ).find( '#content' );
+    $( "#result" ).empty().append( content );
+  });
+});
+</script>
+
+
+<!--original method-->
+
+  <textarea class="message-input"></textarea>
+  <div class="button">Send</div>
+
+<script src="/jquery.js"></script>
+<script type="text/javascript" src="chat_helpers_new.js"></script>
+<script>
+  $(function () {
+
+    $(".button").click(function (event) {
+      if (e.keyCode !== 13) { return; }
+      // on 'click', send text to the server
+      event.preventDefault();
+      event.stopPropagation();
+      helpers.sendMessage($.trim($(this).val()));
+      $(this).val("");
+    });
+
+    // Poll the server for new messages.
+    setInterval(function () {
+      helpers.fetchNewMessages(function (messages) {
+        $.each(messages, function (i, message) {
+          helpers.renderMessage(message);
+        });
+      });
+    }, 2000);
+
+  });
+</script>
+
 

@@ -6,25 +6,38 @@ body {
   padding: 20px;
 }
 
+div {
+  height: 25px;
+  width: 100px;
+  padding-top: 5px;
+  border-radius: 5px;
+  background-color: palegreen;
+  text-align: center;
+  color: darkslateblue;
+  font-family: Verdana, Arial, Sans-Serif;
+  opacity: 0.5;
+}
+
 .messages {
   list-style-type: none;
   background: palegreen;
   padding: 10px;
   margin: 5px;
-  font-color: midnightblue;
-  border: solid seagreen 2px;
+  color: darkslateblue;
+  border: solid darkslateblue 2px;
 }
 
 .messages li:nth-child(odd) {
-  background: darkslateblue;
-  font-color: silver;
-  border: solid silver 2px;
+  background: silver;
+  color: darkslateblue;
+  border: solid darkslateblue 2px;
 }
 
 .message-input {
   height: 1.5em;
+  background: silver;
+  color: darkslateblue;
   resize: none;
   width: 50%;
-  border: solid slateblue 2px;
-  box-shadow: none;
+  border: solid darkslateblue 2px;
 }

@@ -1,7 +1,12 @@
+$(document).ready(function(){});
 
+// The elements used.
+var chatForm = document.id('chatForm'),
+    result = document.id('result');
+    message = document.id('message')
 
 //for posting message to a local file
-$("#chatForm").submit(function() {
+$("#chatForm").helpers.sendMessage(function("message") {
     $.ajax({
         target:  "local_msg_srv.txt", 
         data: {text: "message"},
@@ -13,33 +18,12 @@ $("#chatForm").submit(function() {
         error: function(jqXHR, textStatus, errorThrown) {
             console.log("error");
             console.log(textStatus);
-        },
-    })
+        }
+    });
 });
 
 
-
-/* attach a submit handler to the form */
-$("#chatForm").submit(function(event) {
- 
-  /* stop form from submitting normally */
-  event.preventDefault();
- 
-  /* get some values from the file: */
-  var $form = $( this ),
-      term = $form.find( 'input[name="message"]' ).val(),
-      url = $form.attr( 'action' );
- 
-  /* Send the data using post */
-  var posting = $.post( /users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt, { data } );
- 
-  /* Put the results in a div */
-  posting.done(function( data ) {
-    var content = $( data ).find( '#content' );
-    $( "#result" ).append( content );
-  });
-});
-
+/* http://jsfiddle.net/j95r7/1/ */
 
 //----------------------
 
@@ -47,7 +31,7 @@ var global = function () {
     return this;
 };
 
-var host = "localhost:8080";
+var host = "Users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt";
 //for testing from my local machine
 
 var since = 0;

@@ -5,14 +5,15 @@ var global = function () {
 };
 
 // The elements in my form
-var chatForm = document.id('chatForm'),
+document.getElementById(id),
+chatForm = document.id('chatForm'),
     result = document.id('result'),
     message = document.id('message');
     console.log(message);
   
   //for posting message to a local file
   $('.button').click(function(element){
-    $("#chatForm").submit(function() {
+    $('#chatForm').submit(function() {
       $.ajax({
         url:  "/Users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt", 
         data: {text: message},

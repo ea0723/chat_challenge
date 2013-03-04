@@ -1,27 +1,14 @@
-<<<<<<< HEAD
 $(document).ready(function()) {
   ("#send_button").event(function()) {
     
   }
-}
-=======
-$(document).ready(function(){});
-
->>>>>>> auto-saves
 
 $(function(){
   var global = (function(){return this;}());
 
-<<<<<<< HEAD
-  var host = "codeclasschat.herokuapp.com";
-  //var host = "localhost:1982"; // dev
-
-  // The time (in milliseconds) of the last message we received.
-=======
   var host = "localhost:8080";
   //for testing from my local machine
 
->>>>>>> auto-saves
   var since = 0;
 
   global.helpers = {

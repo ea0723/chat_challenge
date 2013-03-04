@@ -1,47 +1,75 @@
-html, body {
-  background: whitesmoke;
+* {
+  background: white;
+  font-family: Optima, Sans-Serif;
+}
+h1 {
+    font-family: Noteworthy, Comic Sans MS;
+    font-size: 18pt;
 }
 
-body {
-  padding: 20px;
+h3 {
+    font-weight: Normal;
 }
 
-<<<<<<< HEAD
-div {
-=======
 .button{
->>>>>>> auto-saves
-  height: 25px;
-  width: 100px;
-  padding-top: 5px;
-  border-radius: 5px;
-  background-color: palegreen;
-  text-align: center;
-  color: darkslateblue;
-  font-family: Verdana, Arial, Sans-Serif;
-  opacity: 0.5;
+    height: 35px;
+    width: 100px;
+    padding-top: 3px;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    text-align: center;
+    color: black;
+    font-family: Optima, GillSans, Sans-Serif;
+    font-size: 16px;
+    opacity: 0.95;
 }
 
+fieldset {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+textarea {
+    margin-top: 3px;
+    padding: 5px;
+    width: 175px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+}
+        
+#result {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #0000ff;
+    background-color: #ddddff;
+    list-style-type: none;
+}
+
+#result empty {
+
+/*
 .messages {
-  list-style-type: none;
-  background: palegreen;
-  padding: 10px;
-  margin: 5px;
-  color: darkslateblue;
-  border: solid darkslateblue 2px;
+    list-style-type: none;
+    background: lightsteelblue;
+    padding: 10px;
+    margin: 5px;
+    color: darkslateblue;
+    border-bottom: solid darkslateblue 1px;
 }
 
 .messages li:nth-child(odd) {
   background: silver;
   color: darkslateblue;
-  border: solid darkslateblue 2px;
+  border-bottom: solid darkslateblue 1px;
 }
 
 .message-input {
-  height: 1.5em;
-  background: silver;
-  color: darkslateblue;
-  resize: none;
-  width: 50%;
-  border: solid darkslateblue 2px;
-}
+    height: 50px;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+}*/

@@ -35,6 +35,7 @@ chatForm = document.id('chatForm'),
 
 //----------------------
 
+/* this is commented out because it's going to be used later when I rewrite the helpers.
 var global = function () {
     return this;
 };
@@ -83,3 +84,4 @@ global.helpers = {
         });
     },
 };
+*/

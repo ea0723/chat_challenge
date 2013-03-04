@@ -1,26 +1,33 @@
 $(document).ready(function(){});
 
-// The elements used.
-var chatForm = document.id('chatForm'),
-    result = document.id('result');
-    message = document.id('message')
+var global = function () {
+    return this;
+};
 
-//for posting message to a local file
-$("#chatForm").helpers.sendMessage(function("message") {
-    $.ajax({
-        target:  "local_msg_srv.txt", 
-        data: {text: "message"},
+// The elements in my form
+var chatForm = document.id('chatForm'),
+    result = document.id('result'),
+    message = document.id('message');
+    console.log(message);
+  
+  //for posting message to a local file
+  $('.button').click(function(element){
+    $("#chatForm").submit(function() {
+      $.ajax({
+        url:  "/Users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt", 
+        data: {text: message},
         type: "POST",
         success: function(data, textStatus, jqXHR) {
-            console.log("Message posted!");
-            console.log(data);
+          console.log("Message posted!");
+          console.log(data);
         },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log("error");
-            console.log(textStatus);
+        error: function(jqXHR, textStatus, errorThrown){
+          console.log("error");
+          console.log(textStatus);
         }
+      });
     });
-});
+  });
 
 
 /* http://jsfiddle.net/j95r7/1/ */

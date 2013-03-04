@@ -1,23 +1,23 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Elena Newton Chat Challenge</title>
-	<link type="stylesheet/css" src="chat_challenge_CSS.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="http://codeclasschat.herokuapp.com/helpers.js"></script>
+	<link rel='stylesheet' type='text/css' href="chat_challenge_CSS.css" />
 </head>
 <body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="http://codeclasschat.herokuapp.com/helpers.js"></script>
-<form id="chatForm" action="/Users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt" method="post">
-<h1>Elena's Chat Challenge</h1> 
-<h3>Type your message in the box, and click Submit.</h3>
-<fieldset>
-    <legend>Simple Text Chat</legend>
-    <textarea type="text" id="message" name="message" title="Message" Placeholder="Your message here..." rows="2" cols="50" spellcheck="true"></textarea>
-    <div><input type="submit" value="Submit" class="button" /></div>
-</fieldset>
-<!--the result of the search will be rendered inside this div -->
-<div id="result"></div>
-</form>
+	<form id="chatForm" action="/Users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt" method="post">
+		<h1>Elena's Chat Challenge</h1> 
+		<h3>Type your message in the box, and click Submit.</h3>
+		<fieldset>
+			<legend>Simple Text Chat</legend>
+			<textarea type="text" id="message" name="message" title="Message" Placeholder="Your message here..." rows="2" cols="50" spellcheck="true"></textarea>
+			<div><input type="submit" value="Submit" class="button" /></div>
+		</fieldset>
+		<!--the result of the search will be rendered inside this div -->
+		<div id="result"></div>
+	</form>
 </body>
 
 
@@ -30,3 +30,4 @@ Next: go to local_msg_srv.txt and pull any messages marked as "new"
 Last: display in div: #results using helpers.renderMessage(messageText). 
 	Step 2: mark message as "rendered" in local_msg_srv.txt.
 -->
+</html>

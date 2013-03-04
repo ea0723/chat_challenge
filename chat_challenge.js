@@ -1,0 +1,65 @@
+
+
+$.ajax({
+  url:  "https://docs.google.com/forms/d/1s4a2tQb65fAA5cyJFiXszxyuNtOzNAeNn7Agcge7_Vc/formResponse",
+  data: { formkey: "1s4a2tQb65fAA5cyJFiXszxyuNtOzNAeNn7Agcge7_Vc", "entry.1371757613": message},
+  type: "POST",
+  success: function(data, textStatus, jqXHR) {
+    console.log("success");
+    console.log(data);
+  },
+  error: function(jqXHR, textStatus, errorThrown) {
+    console.log("error");
+    console.log(textStatus);
+  },
+})
+
+
+var global = function () {
+    return this;
+};
+
+var host = "localhost:8080";
+//for testing from my local machine
+
+var since = 0;
+
+global.helpers = {
+
+    sendMessage: function (message) {
+        console.log('sending message...');
+        $.ajax("http://" + host + "/messages/create", {
+            dataType: "jsonp",
+            data: {
+                text: message
+            }
+        });
+    },
+
+    renderMessage: function (text) {
+        console.log('rendering message...', text);
+        var $messages = $('.messages').length ? $('.messages') : $('<ol class="messages"/>').appendTo(document.body);
+        $('<li class="message"/>').html($('<span class="text"/>').text(text)).prependTo($messages);
+    },
+
+    // Goes to the server to get all undisplayed messages and passes each one to the rendering helper
+    fetchNewMessages: function (callback) {
+        console.log('fetching messages...');
+        $.ajax("http://" + host + "/messages", {
+            dataType: "jsonp",
+            data: {
+                since: since
+            },
+            success: function (result) {
+                // Update the value of the `since` variable so we don't get
+                // the same messages back again in the future.
+                result.messages.length && (since = result.messages[result.messages.length - 1].time);
+                var messageTexts = [];
+                $.each(result.messages, function (which, message) {
+                    messageTexts.push(message.text);
+                });
+                callback(messageTexts);
+            }
+        });
+    },
+};

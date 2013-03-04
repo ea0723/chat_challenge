@@ -13,7 +13,7 @@ chatForm = document.id('chatForm'),
   
   //for posting message to a local file
   $('.button').click(function(element){
-    $('#chatForm').submit(function() {
+    $('#chatForm').submit(function().append() {
       $.ajax({
         url:  "/Users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt", 
         data: {text: message},
@@ -32,6 +32,7 @@ chatForm = document.id('chatForm'),
 
 
 /* http://jsfiddle.net/j95r7/1/ */
+/* http://jsbin.com/ivociy/2/ */
 
 //----------------------
 

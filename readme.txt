@@ -24,3 +24,39 @@ If you don't have rendering working yet, You check if your call worked by lookin
 Last, you'll want to set up polling of the helpers.fetchNewMessages() function, using setInterval().
 
 Now go build a local chat client and start talking! If you like, you can check out this example of what you're going for.
+
+------------------------------
+
+Specifics for the Task:
+
+a) write a chat client
+
+1. get messages from the server and put them on the screen
+	----helpers.fetchNewMessages(callback)
+
+2. when the user types in a new message, put that on the server
+	----event listeners (jquery)
+	----helpers.sendMessage(callback)
+
+3. periodically check for new messages
+	----setInterval
+
+
+b) rewrite the helpers
+
+1. fetchNewMessages
+	----make an http request
+	----$.ajax
+	----jsonp
+
+2. renderMessage
+	----jquery `append`
+	----jquery converts strings to dom nodes
+
+3. sendMessage
+	----make an http request
+	----$.ajax
+	----jsonp
+
+-------
+

@@ -2,22 +2,37 @@
 <html>
 <head>
 	<title>Elena Newton Chat Challenge</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script src="http://codeclasschat.herokuapp.com/helpers.js"></script>
-	<script type="text/javascript" href="chat_challenge.js"></script>
 	<link rel='stylesheet' type='text/css' href="chat_challenge_CSS.css"/>
 </head>
 <body>
-	<form id="chatForm" action="/Users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt" method="post">
+	<form id="chatForm" method="post">
 		<h1>Elena's Chat Challenge</h1> 
 		<h3>Type your message in the box, and click Submit.</h3>
 		<fieldset>
 			<legend>Simple Text Chat</legend>
 			<textarea type="text" id="message" name="message" title="Message" Placeholder="Your message here..." rows="2" cols="50" spellcheck="true"></textarea>
 			<div><input type="submit" value="Submit" class="button" /></div>
+			
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="http://codeclasschat.herokuapp.com/helpers.js"></script>
+		<script>
+		$(document).ready(function(){
+		$('.button').click(function() {
+			helpers.sendMessage('#message')
+		});
+		
+		$(document).setInterval(function() {
+			helpers.fetchNewMessages(callback)
+		}, 5000);
+		
+	};
+		
+		
+		</script>
+		
 		</fieldset>
 		<!--the result of the search will be rendered inside this div -->
-		<div id="result"></div>
+		<div class="messages"></div>
 	</form>
 </body>
 
@@ -30,5 +45,8 @@ Next: go to local_msg_srv.txt and find any "new" messages using helpers.fetchNew
 Next: go to local_msg_srv.txt and pull any messages marked as "new"  
 Last: display in div: #results using helpers.renderMessage(messageText). 
 	Step 2: mark message as "rendered" in local_msg_srv.txt.
+	
+	$('#chatForm').submit(sendMessage('#message') {
+	
 -->
 </html>

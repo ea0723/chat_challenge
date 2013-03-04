@@ -1,12 +1,5 @@
-$(document).ready(function()) {
-  ("#send_button").event(function()) {
-    
-  }
-
-$(function(){
-  var global = (function(){return this;}());
-
-  var host = "localhost:8080";
+var global = (function(){return this;}());
+var host = "local_msg_srv.txt";
   //for testing from my local machine
 
   var since = 0;

@@ -1,14 +1,31 @@
-<h1>Elena's Chat Challenge</h1>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Elena Newton Chat Challenge</title>
+	<link type="stylesheet/css" src="chat_challenge_CSS.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="http://codeclasschat.herokuapp.com/helpers.js"></script>
+</head>
+<body>
+<h1>Elena's Chat Challenge</h1> 
 <h3>Type your message in the box, and click Submit.</h3>
-<h6>Note: messages are limited to 250 characters</h6>
 
-<form action="https://docs.google.com/forms/d/1s4a2tQb65fAA5cyJFiXszxyuNtOzNAeNn7Agcge7_Vc/formResponse" method="post"></form>
+<form id="chatForm" action="/Users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt" method="post"></form>
 <fieldset>
     <legend>Simple Text Chat</legend>
-    <textarea type="text" name="message" title="Message" Placeholder="Your message here..." rows="2" cols="50" spellcheck="true" maxlength="250"></textarea>
+    <textarea type="text" name="message" title="Message" Placeholder="Your message here..." rows="2" cols="50" spellcheck="true"></textarea>
     <div>
         <input type="submit" value="Submit" class="button" />
     </div>
 </fieldset>
 <!--/* the result of the search will be rendered inside this div -->
 <div id="result"></div>
+</body>
+
+<!--
+First: set up a form to capture message (form: "chatForm", html element: "textarea", name: "message") (done)
+Next: add text from message field to line 1 of local_msg_srv.txt using helpers.sendMessage(messageText). mark message as "new"
+Next: go to local_msg_srv.txt and find any "new" messages using helpers.fetchNewMessages(callback)
+Next: go to local_msg_srv.txt and pull any messages marked as "new"  
+Last: display in div: #results using helpers.renderMessage(messageText). mark message as rendered in local_msg_srv.txt.
+-->

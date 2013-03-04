@@ -1,8 +1,8 @@
-
+http://jsfiddle.net/j95r7/
 
 $.ajax({
-  url:  "https://docs.google.com/forms/d/1s4a2tQb65fAA5cyJFiXszxyuNtOzNAeNn7Agcge7_Vc/formResponse",
-  data: { formkey: "1s4a2tQb65fAA5cyJFiXszxyuNtOzNAeNn7Agcge7_Vc", "entry.1371757613": message},
+  url:  "/Users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt",
+  data: {text: message},
   type: "POST",
   success: function(data, textStatus, jqXHR) {
     console.log("success");
@@ -14,6 +14,29 @@ $.ajax({
   },
 })
 
+/* attach a submit handler to the form */
+$("#chatForm").submit(function(event) {
+ 
+  /* stop form from submitting normally */
+  event.preventDefault();
+ 
+  /* get some values from elements on the page: */
+  var $form = $( this ),
+      term = $form.find( 'input[name="message"]' ).val(),
+      url = $form.attr( 'action' );
+ 
+  /* Send the data using post */
+  var posting = $.post( url, { s: term } );
+ 
+  /* Put the results in a div */
+  posting.done(function( data ) {
+    var content = $( data ).find( '#content' );
+    $( "#result" ).append( content );
+  });
+});
+
+
+//----------------------
 
 var global = function () {
     return this;

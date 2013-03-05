@@ -11,25 +11,27 @@
 		<fieldset>
 			<legend>Simple Text Chat</legend>
 			<textarea type="text" id="newMessage" name="message" title="Message" Placeholder="Your message here..." rows="2" cols="75" spellcheck="true"></textarea>
-			<div><input type="submit" value="Submit" class="button" /></div>
+			<div><input type="submit" value="Submit" class="button" onClick="sendMessage(this.form)"/></div>
 			<!--the result of the search will be rendered inside this div -->
-			<div class="messages"></div>
+			<div class="messages" name="messages"></div>
 		</fieldset>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="http://codeclasschat.herokuapp.com/helpers.js"></script>
 	<script>
 	$(document).ready(function(){
-		
+		var text = $('textarea#newMessage').val();
 		$('.button').click(function() {
-			$helpers.sendMessage(".newMessage")
+			$('#chatForm').submit(function(event) {
+				helpers.sendMessage(text);})
 		});
 		
-		$(window).setInterval(function(){
-			helpers.fetchNewMessages(callback);
-		}, 5000);
+		function fetch (){
+			helpers.fetchNewMessages(messages);
+			helpers.renderMessage(text);
+		};
 		
-		$helpers.renderMessage(messageText)
-	};
+		setInterval(fetch, 5000);
+	});
 		
 	</script>
 		

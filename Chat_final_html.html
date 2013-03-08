@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+	<title>Elena Newton Chat Challenge</title>
+	<link rel='stylesheet' type='text/css' href="chat_challenge_CSS.css"/>
+</head>
+<body>
+	<form id="chatForm" method="post">
+		<h1>Elena Newton</h1> 
+		<h3>HackReactor Challenge - Simple Chat</h3>
+		<fieldset>
+			<legend>Type Your Message, Click Submit</legend>
+			<textarea type="text" class="newMessage" name="message" title="Message" Placeholder="Your message here..." rows="2" cols="100" spellcheck="true"></textarea>
+			<div><input type="submit" value="Submit" class="button"/></div>
+			<!--the result of the search will be rendered inside this div -->
+			<div class="messages" name="messages"></div>
+		</fieldset>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="http://codeclasschat.herokuapp.com/helpers.js"></script>
+	<script>
+	$(document).ready(function(){
+	    $(".button").click(function (e) {
+			e.preventdefault
+  	      helpers.sendMessage($('.newMessage').val());
+  	      $('.newMessage').val("");
+  	    });
+			
+		function fetch(){
+            helpers.fetchNewMessages(function (messages) {
+              $.each(messages, function (i, message) {
+                helpers.renderMessage(message);});
+				e.stoppropogation
+			});
+		};
+		
+		function warning(){
+			$('.messages').prepend('<li>Clearing message history in 5 Seconds</li>');
+		};
+		
+		function clear(){
+			$('.messages').empty();
+		};
+		
+		setInterval(fetch, 5000);
+		setInterval(warning, 25000)
+		setInterval(clear, 30000);
+		
+	});
+		
+	</script>
+		
+	</form>
+</body>
+
+
+<!--
+First: set up a form to capture message (form: "chatForm", html element: "textarea", name: "message") (done)
+Next: add text from message field to line 1 of local_msg_srv.txt using helpers.sendMessage(messageText). 
+	Step 2: mark message as "new"
+Next: go to local_msg_srv.txt and find any "new" messages using helpers.fetchNewMessages(callback)
+Next: go to local_msg_srv.txt and pull any messages marked as "new"  
+Last: display in div: #results using helpers.renderMessage(messageText). 
+	Step 2: mark message as "rendered" in local_msg_srv.txt.
+	
+	$('#chatForm').submit(sendMessage('#message') {
+	
+-->
+</html>

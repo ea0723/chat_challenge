@@ -1,58 +1,47 @@
-var global = (function(){return this;}());
-var host = "local_msg_srv.txt";
-  //for testing from my local machine
+function getRender() {
+            helpers.fetchNewMessages(function (messages) {
+              $.each(messages, function (i, message) {
+                helpers.renderMessage(message);
+              });
+            });
+		};
 
-  var since = 0;
 
-  global.helpers = {
 
-    sendMessage: function(message) {
-      console.log('sending message...');
-      $.ajax("http://" + host + "/messages/create", {
-        dataType: "jsonp",
-        data: {text: message}
-      });
-    },
-	
-	$(document).ready(function(){});
 
-	var global = function () {
-	    return this;
-	};
 
-	/*
+
+
+
 	// The elements in my form
 	document.getElementById(id),
-	chatForm = document.id('chatForm'),
-	    result = document.id('result'),
-	    message = document.id('message');
-	    console.log(message);
+	var chatForm = document.id('chatForm'),
+	var result = document.id('result'),
   
-	  //for posting message to a local file
-	  $('.button').click(function(element){
-	    $('#chatForm').submit(function().append() {
-	      $.ajax({
-	        url:  "/Users/ea0723/Documents/projects/Chat_Challenge/local_msg_srv.txt", 
-	        data: {text: message},
-	        type: "POST",
-	        success: function(data, textStatus, jqXHR) {
-	          console.log("Message posted!");
-	          console.log(data);
-	        },
-	        error: function(jqXHR, textStatus, errorThrown){
-	          console.log("error");
-	          console.log(textStatus);
-	        }
-	      });
-	    });
-	  });
-	  */
 
-    renderMessage: function(text) {
-      console.log('rendering message...', text);
-      var $messages = $('.messages').length ? $('.messages') : $('<ol class="messages"/>').appendTo(document.body);
-      $('<li class="message"/>').html($('<span class="text"/>').text(text)).prependTo($messages);
-    },
+          // Poll the server for new messages.
+          setInterval(function () {
+            helpers.fetchNewMessages(function (messages) {
+              $.each(messages, function (i, message) {
+                helpers.renderMessage(message);
+              });
+            });
+          }, 2000);
+
+        });
+    
+
+
+
+      renderMessage: function(text) {
+        console.log('rendering message...', text);
+  	  $('.messages').prepend(text) {
+        var $messages = $('.messages').length ? $('.messages') : $('<ol class="messages"/>').appendTo(document.body);
+        $('<li class="message"/>').html($('<span class="text"/>').text(result.messages.time +": " + text)).prependTo($messages);
+      },
+
+
+
 
     // Goes to the server to get all undisplayed messages and passes each one to the rendering helper
     fetchNewMessages: function(callback) {

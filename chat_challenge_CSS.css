@@ -1,27 +1,41 @@
 * {
-  background: white;
-  font-family: Optima, Sans-Serif;
 }
+
 h1 {
     font-family: Noteworthy, Comic Sans MS;
     font-size: 18pt;
 }
 
 h3 {
-    font-weight: Normal;
+	font-family: Optima, GillSans, sans-serif;
+	font-size: 18px;
+	font-weight: Normal;
 }
 
-.button{
+p {
+	font-family: Optima, GillSans, sans-serif;
+	font-size: 14px;
+}
+
+legend {
+	font-family: Optima, GillSans, sans-serif;
+	margin: 5px;
+	font-size: 15px;
+	font-style: italic;
+	color: grey;
+}
+
+.button {
     height: 30px;
     width: 75px;
     padding-top: 3px;
-    margin-top: 5px;
+    margin: 5px;
     border-radius: 5px;
     background-color: cornflowerblue;
     text-align: center;
     color: black;
     font-family: Optima, GillSans, Sans-Serif;
-    font-size: 12pt;
+	font-size: 14px;
     opacity: 0.65;
 }
 
@@ -31,23 +45,25 @@ h3 {
 }
 
 fieldset {
-    margin-bottom: 10px;
+    margin: 5px;
     padding: 10px;
     border: 1px solid silver;
     border-radius: 5px;
 }
 
 textarea {
-    margin-top: 3px;
+    margin: 5px;
     padding: 5px;
     width: 175px;
+	font-family: 'Handlee', sans-serif;
+	font-size: 14px;
     border: 1px solid #000000;
     border-radius: 3px;
 }
         
 #result {
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #0000ff;
     border-radius: 5px;
     background-color: #ddddff;
@@ -59,13 +75,16 @@ textarea {
     padding: 0;
 }
 
-
 li {
     list-style-type: none;
     background: lightsteelblue;
-    padding: 10px;
+	font-family: 'Handlee', sans-serif;
+	font-size: 14px;
+    padding: 5px;
     margin: 5px;
     color: darkslateblue;
+	border: 1px solid white;
+	border-radius: 3px;
 }
 
 li:nth-child(odd) {

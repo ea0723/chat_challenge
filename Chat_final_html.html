@@ -21,9 +21,8 @@
 	<script>
 	$(document).ready(function(){
 	    $(".button").click(function (e) { //click submit button to initiate send message
-			e.preventdefault //prevent the page clearing everything each time a message is sent
-  	      helpers.sendMessage($('.newMessage').val()); //helper js that pulls textarea text
-  	      $('.newMessage').val(""); //returns textarea value to blank after submit
+			helpers.sendMessage($('.newMessage').val()); //helper js that pulls textarea text
+			$('.newMessage').val(""); //returns textarea value to blank after submit
   	    });
 			
 		function fetch(){ //create a named function for easier reading of setInterval code
@@ -42,8 +41,8 @@
 		};
 		
 		setInterval(fetch, 5000); //adjust fetch timing
-		setInterval(warning, 25000) //adjust warning timing
-		setInterval(clear, 30000); //adjust clear timing
+		setInterval(warning, 55000) //adjust warning timing
+		setInterval(clear, 60000); //adjust clear timing
 		
 	});
 		
